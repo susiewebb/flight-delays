@@ -16,12 +16,15 @@ jobs:
           
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: |
+          packages: |
             any::rvest
             any::tidyverse
             any::dplyr
             any::jsonlite
-            github::munichrocker/DatawRappr
+            
+      - name: Install DatawRappr package
+        run: |
+          Rscript -e "pak::pkg_install('munichrocker/DatawRappr')"
 
       - name: Run scraper
         env:
