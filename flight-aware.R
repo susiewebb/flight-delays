@@ -1,5 +1,3 @@
-#An auto-updating scraper that will feed data from flight aware into datawrapper
-
 #Loading libraries
 library(tidyverse)
 library(jsonlite)
