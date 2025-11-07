@@ -55,4 +55,4 @@ jobs:
           ORIGIN_KEY: ${{ secrets.ORIGIN_KEY }}
         run: |
           . ~/.Renviron
-          Rscript "scripts/measles.R"
+          Rscript "flight-aware.R"
