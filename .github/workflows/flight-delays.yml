@@ -15,7 +15,7 @@ jobs:
           r-version: 'release'
       - name: Install DatawRappr package
         run: |
-          Rscript -e "pak::pkg_install('munichrocker/DatawRappr')"
+          Rscript -e 'remotes::install_github("munichrocker/DatawRappr", lib="~/Rlib"
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           packages: |
