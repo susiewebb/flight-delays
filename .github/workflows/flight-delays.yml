@@ -2,7 +2,7 @@ name: Flight delays scrape
 
 on:
   schedule:
-    - cron: "*/5 * * * *"   #Run every 5 minutes
+    - cron: "*/15 * * * *"   #Run every 5 minutes
   workflow_dispatch:
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
             any::jsonlite
       - name: Install DatawRappr package
         run: |
-          Rscript -e 'remotes::install_github("munichrocker/DatawRappr", lib="~/Rlib"
+          Rscript -e "pak::pkg_install('munichrocker/DatawRappr')"
 
       - name: Run scraper
         env:
