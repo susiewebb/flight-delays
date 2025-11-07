@@ -19,7 +19,7 @@ jobs:
             any::rvest
             any::tidyverse
             any::dplyr
-            any::DatawRappr
+            any::munichrocker/DatawRappr
             any::jsonlite
 
       - name: Run scraper
