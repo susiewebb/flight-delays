@@ -8,6 +8,9 @@ library(DatawRappr)
 api_key <- Sys.getenv("API_KEY")
 origin_chart <- Sys.getenv("ORIGIN_KEY")
 
+datawrapper_auth(api_key =  api_key, overwrite=TRUE)
+
+
 #Pulling data from FlightAware
 origin_html <- read_html('https://www.flightaware.com/ajax/airport/cancelled_count.rvt?type=origin&timePeriod=today&airportFilter=')
 airport_html <- read_html('https://www.flightaware.com/ajax/airport/cancelled_count.rvt?type=airline&timePeriod=today&airportFilter=')
