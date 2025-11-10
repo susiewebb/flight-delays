@@ -55,7 +55,8 @@ parse_table_rows <- function(page) {
 #Parsing through airline, origin, and destination cancellations and delays
 origin <- parse_table_rows(origin_html)
 destination <- parse_table_rows(destination_html)
-airline <- parse_table_rows(airline_html)
+airline <- parse_table_rows(airline_html)%>%
+  rename(Airline = Airport)
 
 ###Now to make the Datawrapper....
 
