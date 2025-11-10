@@ -67,13 +67,15 @@ today <- format(as.POSIXct(Sys.time(), tz = "America/New_York"), "%b. %d at %I:%
 today <- sub(" at 0", " at ", today)
 today <- gsub("AM", "a.m.", today)
 today <- gsub("PM", "p.m.", today)
-today
+
+today_head <- format(as.POSIXct(Sys.time(), tz = "America/New_York"), "%b. %d")
+
 
 #####Origin chart
 #Editing the chart
 dw_edit_chart(
   chart_id = origin_chart,
-  title = 'Flight cancellations, delays by origin airport',
+  title = paste('Flight cancellations, delays by origin airport on', today_head),
   intro = 'Below are the current number and percentage of flights delayed and cancelled leaving from each airport.<br>
   <a target="_self" href="https://datawrapper.dwcdn.net/f9FDc/" style="background-color:#3E495D; padding:4px 8px; border-radius:5px; color:#fff; font-weight:700; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer; display: inline-block;margin-bottom:2px;margin-top:4px;  opacity: 100%; " rel="nofollow noopener">By origin</a> &nbsp
 <a target="_self" href="https://datawrapper.dwcdn.net/o0LNE/" style="background-color:#3E495D; padding:4px 8px; border-radius:5px; color:#ffffff; font-weight:700; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer; display: inline-block;margin-bottom:2px;margin-top:4px;  opacity: 50%; " rel="nofollow noopener"> By destination</a> &nbsp
@@ -96,7 +98,7 @@ dw_publish_chart(origin_chart)
 #Editing the chart
 dw_edit_chart(
   chart_id = destination_chart,
-  title = 'Flight cancellations, delays by destination airport',
+  title = paste('Flight cancellations, delays by destination airport on', today_head),
   intro = 'Below are the current number and percentage of flights delayed and cancelled arriving to each airport.<br>
   <a target="_self" href="https://datawrapper.dwcdn.net/f9FDc/" style="background-color:#3E495D; padding:4px 8px; border-radius:5px; color:#fff; font-weight:700; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer; display: inline-block;margin-bottom:2px;margin-top:4px;  opacity: 50%; " rel="nofollow noopener">By origin</a> &nbsp
 <a target="_self" href="https://datawrapper.dwcdn.net/o0LNE/" style="background-color:#3E495D; padding:4px 8px; border-radius:5px; color:#ffffff; font-weight:700; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer; display: inline-block;margin-bottom:2px;margin-top:4px;  opacity: 100%; " rel="nofollow noopener"> By destination</a> &nbsp
@@ -119,7 +121,7 @@ dw_publish_chart(destination_chart)
 #Editing the chart
 dw_edit_chart(
   chart_id = airline_chart,
-  title = 'Flight cancellations, delays by airline',
+  title = paste('Flight cancellations, delays by airline on', today_head),
   intro = 'Below are the current number and percentage of flights delayed and cancelled by each airline.<br>
   <a target="_self" href="https://datawrapper.dwcdn.net/f9FDc/" style="background-color:#3E495D; padding:4px 8px; border-radius:5px; color:#fff; font-weight:700; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer; display: inline-block;margin-bottom:2px;margin-top:4px;  opacity: 50%; " rel="nofollow noopener">By origin</a> &nbsp
 <a target="_self" href="https://datawrapper.dwcdn.net/o0LNE/" style="background-color:#3E495D; padding:4px 8px; border-radius:5px; color:#ffffff; font-weight:700; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer; display: inline-block;margin-bottom:2px;margin-top:4px;  opacity: 50%; " rel="nofollow noopener"> By destination</a> &nbsp
