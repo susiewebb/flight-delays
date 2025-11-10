@@ -47,7 +47,9 @@ parse_table_rows <- function(page) {
   df <- df[-c(1,2),]
   
     df <- df %>%
-    select(-airport_name)
+    select(-airport_name) %>%
+    mutate(Airport = str_replace_all(Airport, regex("Manila Int[’']l\\s*\\(MNL\\)", ignore_case = TRUE), "Ninoy Aquino Int'l (MNL)"))
+
 }
 
 #Parsing through airline, origin, and destination cancellations and delays
