@@ -54,10 +54,10 @@ parse_table_rows <- function(page) {
 
 #Parsing through airline, origin, and destination cancellations and delays
 origin <- parse_table_rows(origin_html) %>%
-  rename(Origin airport = Airport)
+  rename('Origin airport' = Airport)
 
 destination <- parse_table_rows(destination_html)%>%
-  rename(Destination airport = Airport)
+  rename('Destination airport' = Airport)
 
 airline <- parse_table_rows(airline_html)%>%
   rename(Airline = Airport)
