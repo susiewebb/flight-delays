@@ -2,7 +2,7 @@ name: Flight delays scrape
 
 on:
   schedule:
-    - cron: "*/5 * * * *"   #Run every 5 minutes
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 jobs:
