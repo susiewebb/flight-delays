@@ -5,8 +5,8 @@ library(rvest)
 library(DatawRappr)
 
 #Loading API key, chart keys
-api_key <- Sys.getenv('API_KEY')
-origin_chart <- Sys.getenv('ORIGIN_KEY')
+api_key <- Sys.getenv("API_KEY")
+origin_chart <- Sys.getenv("ORIGIN_KEY")
 
 #Pulling data from FlightAware
 origin_html <- read_html('https://www.flightaware.com/ajax/airport/cancelled_count.rvt?type=origin&timePeriod=today&airportFilter=')
