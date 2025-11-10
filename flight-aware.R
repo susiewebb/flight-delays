@@ -58,7 +58,7 @@ airport <- parse_table_rows(airport_html)
 ###Now to make the Datawrapper....
 
 #Pulling the date
-today <- format(Sys.time(), "%b. %d at %I:%M %p %Z")
+today <- format(as.POSIXct(Sys.time(), tz = "America/New_York"), "%b. %d at %I:%M %p %Z")
 today <- sub(" at 0", " at ", today)
 today <- gsub("AM", "a.m.", today)
 today <- gsub("PM", "p.m.", today)
