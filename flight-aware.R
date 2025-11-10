@@ -57,6 +57,14 @@ airport <- parse_table_rows(airport_html)
 
 ###Now to make the Datawrapper....
 
+#Pulling the date
+today <- format(Sys.time(), "%b. %d at %I:%M %p %Z")
+today <- sub(" at 0", " at ", today)
+today <- gsub("AM", "a.m.", today)
+today <- gsub("PM", "p.m.", today)
+today
+
+
 #Editing the chart
 dw_edit_chart(
   chart_id = origin_chart,
@@ -64,7 +72,8 @@ dw_edit_chart(
   intro = 'Below are the current number and percentage of flights delayed and cancelled leaving from each airport.',
   byline = 'Susie Webb/Get the Facts Data Team',
   source_name = 'Flight Aware',
-  source_url = 'flightaware.com'
+  source_url = 'flightaware.com',
+  annotate = paste("<i>Data as of ",today,".</i>")
 )
 
 #Adding data to the chart
