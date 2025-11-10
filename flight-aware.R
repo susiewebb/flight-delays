@@ -41,15 +41,13 @@ parse_table_rows <- function(page) {
   df <- map_dfr(table_data, ~as.data.frame(t(.x), stringsAsFactors = FALSE))
   
   #Adjusting column names
-  names(df) <- c("num_cancelled", "per_cancelled", "num_delayed", "per_delayed", "Airport", "airport_name")
+  names(df) <- c("Canceled", "% C", "Delayed", "% D", "Airport", "airport_name")
   
   #Dropping first two rows
   df <- df[-c(1,2),]
   
-  df <- df %>%
-    mutate(Cancelled = paste(num_cancelled, ' (',per_cancelled,')', sep=''),
-           Delayed = paste(num_delayed, ' (',per_delayed,')', sep='' )) %>%
-    select(Cancelled, Delayed, Airport)
+    df <- df %>%
+    select(-airport_name)
 }
 
 #Parsing through airline, origin, and destination cancellations and delays
