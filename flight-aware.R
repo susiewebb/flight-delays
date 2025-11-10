@@ -7,8 +7,8 @@ library(DatawRappr)
 #Loading API key, chart keys
 api_key <- Sys.getenv("API_KEY")
 origin_chart <- Sys.getenv("ORIGIN_KEY")
-destination_chart <- Sys.getenv('DESTINATION_KEY')
-airline_chart <- Sys.getenv('AIRLINE_KEY')
+destination_chart <- Sys.getenv("DESTINATION_KEY")
+airline_chart <- Sys.getenv("AIRLINE_KEY")
 
 datawrapper_auth(api_key =  api_key, overwrite=TRUE)
 
