@@ -121,7 +121,7 @@ today_head <- format(as.POSIXct(Sys.time(), tz = "America/New_York"), "%b. %d")
 dw_edit_chart(
   chart_id = origin_chart,
   title = paste('Flight cancellations, delays by origin airport on', today_head),
-  intro = 'Below is the current number and percentage of flights delayed and cancelled leaving from each airport.<br>
+  intro = 'Below is the current number and percentage of flights delayed and canceled leaving from each airport.<br>
   <a target="_self" href="https://datawrapper.dwcdn.net/f9FDc/" style="background-color:#3E495D; padding:4px 8px; border-radius:5px; color:#fff; font-weight:700; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer; display: inline-block;margin-bottom:2px;margin-top:4px;  opacity: 100%; " rel="nofollow noopener">By origin</a> &nbsp
 <a target="_self" href="https://datawrapper.dwcdn.net/o0LNE/" style="background-color:#3E495D; padding:4px 8px; border-radius:5px; color:#ffffff; font-weight:700; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer; display: inline-block;margin-bottom:2px;margin-top:4px;  opacity: 50%; " rel="nofollow noopener"> By destination</a> &nbsp
 <a target="_self" href="https://datawrapper.dwcdn.net/2Fncn/" style="background-color: #3E495D; padding:4px 8px; border-radius:5px; color:#ffffff; font-weight:700; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer; display: inline-block;margin-bottom:2px;margin-top:12px;margin-bottom:9px;  opacity: 50%;rel="nofollow noopener">By airline</a>',
@@ -144,7 +144,7 @@ dw_publish_chart(origin_chart)
 dw_edit_chart(
   chart_id = destination_chart,
   title = paste('Flight cancellations, delays by destination airport on', today_head),
-  intro = 'Below is the current number and percentage of flights delayed and cancelled arriving to each airport.<br>
+  intro = 'Below is the current number and percentage of flights delayed and canceled arriving to each airport.<br>
   <a target="_self" href="https://datawrapper.dwcdn.net/f9FDc/" style="background-color:#3E495D; padding:4px 8px; border-radius:5px; color:#fff; font-weight:700; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer; display: inline-block;margin-bottom:2px;margin-top:4px;  opacity: 50%; " rel="nofollow noopener">By origin</a> &nbsp
 <a target="_self" href="https://datawrapper.dwcdn.net/o0LNE/" style="background-color:#3E495D; padding:4px 8px; border-radius:5px; color:#ffffff; font-weight:700; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer; display: inline-block;margin-bottom:2px;margin-top:4px;  opacity: 100%; " rel="nofollow noopener"> By destination</a> &nbsp
 <a target="_self" href="https://datawrapper.dwcdn.net/2Fncn/" style="background-color: #3E495D; padding:4px 8px; border-radius:5px; color:#ffffff; font-weight:700; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer; display: inline-block;margin-bottom:2px;margin-top:12px;margin-bottom:9px;  opacity: 50%;rel="nofollow noopener">By airline</a>',
@@ -167,7 +167,7 @@ dw_publish_chart(destination_chart)
 dw_edit_chart(
   chart_id = airline_chart,
   title = paste('Flight cancellations, delays by airline on', today_head),
-  intro = 'Below is the current number and percentage of flights delayed and cancelled by each airline.<br>
+  intro = 'Below is the current number and percentage of flights delayed and canceled by each airline.<br>
   <a target="_self" href="https://datawrapper.dwcdn.net/f9FDc/" style="background-color:#3E495D; padding:4px 8px; border-radius:5px; color:#fff; font-weight:700; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer; display: inline-block;margin-bottom:2px;margin-top:4px;  opacity: 50%; " rel="nofollow noopener">By origin</a> &nbsp
 <a target="_self" href="https://datawrapper.dwcdn.net/o0LNE/" style="background-color:#3E495D; padding:4px 8px; border-radius:5px; color:#ffffff; font-weight:700; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer; display: inline-block;margin-bottom:2px;margin-top:4px;  opacity: 50%; " rel="nofollow noopener"> By destination</a> &nbsp
 <a target="_self" href="https://datawrapper.dwcdn.net/2Fncn/" style="background-color: #3E495D; padding:4px 8px; border-radius:5px; color:#ffffff; font-weight:700; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer; display: inline-block;margin-bottom:2px;margin-top:12px;margin-bottom:9px;  opacity: 100%;rel="nofollow noopener">By airline</a> ',
