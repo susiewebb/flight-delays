@@ -46,9 +46,48 @@ parse_table_rows <- function(page) {
   #Dropping first two rows
   df <- df[-c(1,2),]
   
-    df <- df %>%
+     
+  norm_airport <- function(x) {
+    x %>%
+      str_replace_all("’", "'") %>%     #Normalize the airport info
+      str_replace_all("\\s*\\(", " (") %>%  #Exclude double spacing
+      str_squish() %>%
+      str_to_lower()                    #Lower case
+  }
+  
+  
+  #Editing airport names
+  lookup <- tribble(
+    ~from,                                 ~to,
+    "Baltimore/Washington Intl(BWI)",      "Baltimore/Washington Intl Thurgood Marshall (BWI)",
+    "Hartsfield-Jackson Intl (ATL)",       "Hartsfield-Jackson Atlanta International Airport (ATL",
+    "Manila Int'l (MNL)",                  "Ninoy Aquino Int'l (MNL)",
+    "Dallas-Fort Worth Intl (DFW)",         "Dallas Fort Worth Intl (DFW)",
+    "John F Kennedy Intl (JFK)	", "John F. Kennedy Intl (JFK)",
+    "Charlotte/Douglas Intl (CLT)", "Charlotte Douglas Intl (CLT)",
+    "Minneapolis/St Paul Intl (MSP)", "Minneapolis-St Paul Intl (MSP)",
+    "Houston Bush Int'ctl (IAH)", "George Bush Int'ctl (IAH)",
+    "Cleveland-Hopkins Intl (CLE)", "Cleveland Hopkins Intl (CLE)",
+    "St Louis Lambert Intl (STL)", "St. Louis Lambert Intl (STL)",
+    "Dallas Love Fld (DAL)", "Dallas Love Field (DAL)",
+    "William P Hobby (HOU)", "William P. Hobby (HOU)",
+    "Urumqi Diwopu Int'l (URC)", "Ürümqi Diwopu Int'l (URC)",
+    "Gerald R Ford Intl (GRR)", "Gerald R. Ford Intl (GRR)",
+    "Montreal-Trudeau (YUL)", "Montréal-Pierre Elliott Trudeau (YUL)",
+    "Frederick Douglass/Greater Rochester Intl (ROC)", "Frederick Douglass Greater Rochester Intl (ROC)",
+    "Greenville/Spartanburg Intl (GSP)", "Greenville Spartanburg Intl (GSP)",
+    "Daniel K Inouye Intl (HNL)", "Daniel K. Inouye Intl (HNL)"
+    
+  ) %>%
+    mutate(key = norm_airport(from)) %>%
+    select(key, to)  
+  
+  df <- df %>%
     select(-airport_name) %>%
-    mutate(Airport = str_replace_all(Airport, regex("Manila Int[’']l\\s*\\(MNL\\)", ignore_case = TRUE), "Ninoy Aquino Int'l (MNL)"))
+    mutate(key = norm_airport(Airport)) %>%
+    left_join(lookup, by = "key") %>%
+    mutate(Airport = coalesce(to, Airport)) %>%
+    select(-key, -to)
 
 }
 
