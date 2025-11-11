@@ -128,7 +128,7 @@ dw_edit_chart(
   byline = 'Susie Webb/Get the Facts Data Team',
   source_name = 'Flight Aware',
   source_url = 'flightaware.com',
-  annotate = paste("<i>Data as of ",today,". Data includes top 100 airports for cancellations and delays.</i>", sep='')
+  annotate = paste("<i>Data as of " ,today,". Data includes top 100 airports for cancellations and delays.</i>", sep='')
 )
 
 #Adding data to the chart
@@ -151,7 +151,7 @@ dw_edit_chart(
   byline = 'Susie Webb/Get the Facts Data Team',
   source_name = 'Flight Aware',
   source_url = 'flightaware.com',
-  annotate = paste("<i>Data as of ",today,". Data includes top 100 airports for cancellations and delays.</i>",sep='')
+  annotate = paste("<i>Data as of " ,today,". Data includes top 100 airports for cancellations and delays.</i>",sep='')
 )
 
 #Adding data to the chart
@@ -174,7 +174,7 @@ dw_edit_chart(
   byline = 'Susie Webb/Get the Facts Data Team',
   source_name = 'Flight Aware',
   source_url = 'flightaware.com',
-  annotate = paste("<i>Data as of ",today,". Data includes top 100 airlines for cancellations and delays.</i>", sep='')
+  annotate = paste("<i>Data as of " ,today,". Data includes top 100 airlines for cancellations and delays.</i>", sep='')
 )
 
 #Adding data to the chart
