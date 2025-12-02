@@ -114,6 +114,8 @@ today <- gsub("AM", "a.m.", today)
 today <- gsub("PM", "p.m.", today)
 
 today_head <- format(as.POSIXct(Sys.time(), tz = "America/New_York"), "%b. %d")
+today_head <- sub("\\. 0", ". ", today_head)
+today <- sub("\\. 0", ". ", today)
 
 
 #####Origin chart
